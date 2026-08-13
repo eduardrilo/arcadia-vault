@@ -1,44 +1,174 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Arcadia Vault, catálogo de videojuegos independientes.">
+  <meta name="description" content="Arcadia Vault: una selección curada de videojuegos independientes para descubrir tu próxima aventura.">
   <title>Arcadia Vault | Inicio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="css/custom.css">
 </head>
-<body>
+<body data-page="inicio">
   <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
-  <header class="site-header">
+
+  <header class="site-header sticky-top">
     <nav class="navbar navbar-expand-lg" aria-label="Navegación principal">
       <section class="container-xl">
-        <a class="navbar-brand" href="index.html"><span class="brand-mark" aria-hidden="true">A</span> ARCADIA <strong>VAULT</strong></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú"><span class="navbar-toggler-icon"></span></button>
+        <a class="navbar-brand" href="index.html" aria-label="Arcadia Vault, ir al inicio">
+          <span class="brand-mark" aria-hidden="true">A</span>
+          <span>ARCADIA <strong>VAULT</strong></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <section class="collapse navbar-collapse" id="menuPrincipal">
-          <ul class="navbar-nav ms-auto">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Inicio</a></li>
             <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
             <li class="nav-item"><a class="nav-link" href="detalle.html">Juego destacado</a></li>
             <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+            <li class="nav-item ms-lg-2">
+              <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar a modo oscuro" aria-pressed="false">
+                <span aria-hidden="true">◐</span>
+              </button>
+            </li>
           </ul>
         </section>
       </section>
     </nav>
   </header>
+
   <main id="contenido">
-    <section class="placeholder-section container-xl" aria-labelledby="homeTitle">
-      <p class="eyebrow">Archivo en construcción</p>
-      <h1 id="homeTitle">Arcadia Vault</h1>
-      <p>Una selección curada de pequeños juegos y grandes mundos.</p>
+    <section class="hero-section" aria-labelledby="heroTitle">
+      <section class="container-xl hero-grid">
+        <article class="hero-copy">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Biblioteca abierta · 8 mundos disponibles</p>
+          <h1 id="heroTitle">Tu próximo juego favorito está fuera del algoritmo.</h1>
+          <p class="hero-lead">Explora una colección breve y curada de aventuras indie: sin rankings infinitos, sin ruido, solo juegos con una idea que vale la pena descubrir.</p>
+          <section class="hero-actions" aria-label="Acciones principales">
+            <a class="btn btn-accent btn-lg" href="catalogo.html">Explorar catálogo <span aria-hidden="true">→</span></a>
+            <button class="btn btn-outline-light btn-lg" id="randomGameButton" type="button">Sorpréndeme</button>
+          </section>
+          <p class="random-result" id="randomGameResult" role="status" aria-live="polite"></p>
+        </article>
+
+        <article class="hero-game-card" aria-label="Selección del editor: Nebula Drift">
+          <img src="img/nebula-drift.webp" alt="Nave solitaria avanzando entre nebulosas violetas" width="720" height="900">
+          <section class="hero-card-overlay">
+            <p class="eyebrow mb-2">Selección del editor</p>
+            <h2>Nebula Drift</h2>
+            <p>Exploración narrativa · 6 horas</p>
+            <a href="detalle.html" class="stretched-link" aria-label="Ver detalle de Nebula Drift"></a>
+          </section>
+        </article>
+      </section>
+    </section>
+
+    <section class="signal-strip" aria-label="Cifras del catálogo">
+      <section class="container-xl signal-grid">
+        <p><strong>08</strong><span>juegos curados</span></p>
+        <p><strong>04</strong><span>géneros esenciales</span></p>
+        <p><strong>100%</strong><span>mundos independientes</span></p>
+      </section>
+    </section>
+
+    <section class="section-space" aria-labelledby="featuredTitle">
+      <section class="container-xl">
+        <header class="section-heading">
+          <section>
+            <p class="eyebrow">Radar semanal</p>
+            <h2 id="featuredTitle">Tres señales entre el ruido</h2>
+          </section>
+          <a class="text-link" href="catalogo.html">Ver los 8 juegos <span aria-hidden="true">↗</span></a>
+        </header>
+
+        <section id="featuredCarousel" class="carousel slide editorial-carousel" data-bs-ride="false" aria-label="Juegos destacados">
+          <section class="carousel-inner">
+            <article class="carousel-item active">
+              <section class="row g-0 align-items-stretch">
+                <section class="col-md-7">
+                  <img src="img/afterlight.webp" class="d-block w-100" alt="Ciudad futurista iluminada por un sol naranja" width="720" height="900">
+                </section>
+                <section class="col-md-5 carousel-copy">
+                  <span class="genre-tag">Estrategia</span>
+                  <p class="slide-count">01 / 03</p>
+                  <h3>Afterlight Protocol</h3>
+                  <p>Reconstruye una ciudad que solo recibe energía durante siete minutos al día.</p>
+                  <a class="text-link" href="catalogo.html#afterlight">Abrir ficha <span aria-hidden="true">→</span></a>
+                </section>
+              </section>
+            </article>
+            <article class="carousel-item">
+              <section class="row g-0 align-items-stretch">
+                <section class="col-md-7">
+                  <img src="img/mossbound.webp" class="d-block w-100" alt="Bosque verde cubriendo ruinas de una civilización antigua" width="720" height="900">
+                </section>
+                <section class="col-md-5 carousel-copy">
+                  <span class="genre-tag">Aventura</span>
+                  <p class="slide-count">02 / 03</p>
+                  <h3>Mossbound</h3>
+                  <p>Escucha un bosque que recuerda cada paso y transforma el camino de regreso.</p>
+                  <a class="text-link" href="catalogo.html#mossbound">Abrir ficha <span aria-hidden="true">→</span></a>
+                </section>
+              </section>
+            </article>
+            <article class="carousel-item">
+              <section class="row g-0 align-items-stretch">
+                <section class="col-md-7">
+                  <img src="img/pixel-forge.webp" class="d-block w-100" alt="Forja fantástica con chispas rojas y metal brillante" width="720" height="900">
+                </section>
+                <section class="col-md-5 carousel-copy">
+                  <span class="genre-tag">Simulación</span>
+                  <p class="slide-count">03 / 03</p>
+                  <h3>Pixel Forge</h3>
+                  <p>Diseña armas imposibles y aprende las historias de quienes vienen a buscarlas.</p>
+                  <a class="text-link" href="catalogo.html#pixel-forge">Abrir ficha <span aria-hidden="true">→</span></a>
+                </section>
+              </section>
+            </article>
+          </section>
+          <section class="carousel-controls" aria-label="Controles del carrusel">
+            <button type="button" data-bs-target="#featuredCarousel" data-bs-slide="prev" aria-label="Juego anterior">←</button>
+            <button type="button" data-bs-target="#featuredCarousel" data-bs-slide="next" aria-label="Juego siguiente">→</button>
+          </section>
+        </section>
+      </section>
+    </section>
+
+    <section class="manifesto-section" aria-labelledby="manifestoTitle">
+      <section class="container-xl manifesto-grid">
+        <p class="manifesto-number" aria-hidden="true">NO. 01</p>
+        <article>
+          <p class="eyebrow">Nuestro criterio</p>
+          <h2 id="manifestoTitle">Menos catálogo.<br>Más descubrimiento.</h2>
+        </article>
+        <article class="manifesto-copy">
+          <p>No intentamos tener todos los juegos. Elegimos mundos con dirección artística, mecánicas honestas y algo nuevo que decir.</p>
+          <a class="btn btn-dark" href="contacto.html">Recomendar un juego</a>
+        </article>
+      </section>
     </section>
   </main>
+
   <footer class="site-footer">
-    <section class="container-xl"><p>Arcadia Vault · Proyecto académico 2026</p></section>
+    <section class="container-xl footer-grid">
+      <section>
+        <a class="footer-brand" href="index.html">ARCADIA <strong>VAULT</strong></a>
+        <p>Pequeños juegos. Grandes mundos.</p>
+      </section>
+      <nav aria-label="Navegación del pie de página">
+        <a href="catalogo.html">Catálogo</a>
+        <a href="detalle.html">Destacado</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <p class="footer-note">Proyecto académico · HTML + CSS + JS · 2026</p>
+    </section>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
