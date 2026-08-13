@@ -220,10 +220,55 @@ function initializeWishlist() {
   });
 }
 
+function initializeContactForm() {
+  const form = document.querySelector("#contactForm");
+  const messageInput = document.querySelector("#contactMessage");
+  const messageCount = document.querySelector("#messageCount");
+  const successMessage = document.querySelector("#formSuccess");
+
+  if (!form || !messageInput || !messageCount || !successMessage) {
+    return;
+  }
+
+  messageInput.addEventListener("input", () => {
+    messageCount.textContent = String(messageInput.value.length);
+  });
+
+  form.querySelectorAll("input, select, textarea").forEach((field) => {
+    field.addEventListener("input", () => {
+      if (field.classList.contains("is-invalid") && field.checkValidity()) {
+        field.classList.remove("is-invalid");
+      }
+    });
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    successMessage.classList.add("d-none");
+
+    const fields = [...form.querySelectorAll("input, select, textarea")];
+    fields.forEach((field) => {
+      field.classList.toggle("is-invalid", !field.checkValidity());
+    });
+
+    if (!form.checkValidity()) {
+      const firstInvalidField = form.querySelector(":invalid");
+      firstInvalidField.focus();
+      return;
+    }
+
+    successMessage.classList.remove("d-none");
+    form.reset();
+    messageCount.textContent = "0";
+    fields.forEach((field) => field.classList.remove("is-invalid"));
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initializeThemeToggle();
   initializeRandomGame();
   initializeCatalogFilters();
   initializeGameModal();
   initializeWishlist();
+  initializeContactForm();
 });
