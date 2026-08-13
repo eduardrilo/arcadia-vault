@@ -204,9 +204,26 @@ function initializeGameModal() {
   });
 }
 
+function initializeWishlist() {
+  const button = document.querySelector("#wishlistButton");
+  const message = document.querySelector("#wishlistMessage");
+
+  if (!button || !message) {
+    return;
+  }
+
+  button.addEventListener("click", () => {
+    const isSaved = button.getAttribute("aria-pressed") === "true";
+    button.setAttribute("aria-pressed", String(!isSaved));
+    button.textContent = isSaved ? "+ Guardar en mi lista" : "✓ Guardado en mi lista";
+    message.textContent = isSaved ? "Nebula Drift fue retirado de tu lista." : "Nebula Drift fue guardado para después.";
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initializeThemeToggle();
   initializeRandomGame();
   initializeCatalogFilters();
   initializeGameModal();
+  initializeWishlist();
 });
