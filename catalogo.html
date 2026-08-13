@@ -54,8 +54,26 @@
       <section class="container-xl">
         <h2 class="visually-hidden" id="catalogTitle">Listado de videojuegos</h2>
 
+        <section class="filter-panel" aria-label="Controles del catálogo">
+          <section class="input-group search-group">
+            <span class="input-group-text" aria-hidden="true">⌕</span>
+            <label class="visually-hidden" for="gameSearch">Buscar un juego</label>
+            <input class="form-control" id="gameSearch" type="search" placeholder="Buscar por nombre..." autocomplete="off">
+          </section>
+          <section class="filter-select">
+            <label for="genreFilter">Género</label>
+            <select class="form-select" id="genreFilter">
+              <option value="todos">Todos</option>
+              <option value="aventura">Aventura</option>
+              <option value="estrategia">Estrategia</option>
+              <option value="puzle">Puzle</option>
+              <option value="simulacion">Simulación</option>
+            </select>
+          </section>
+        </section>
+
         <header class="results-header">
-          <p><strong>8</strong> juegos en la colección</p>
+          <p id="resultCount" role="status" aria-live="polite"><strong>8</strong> juegos encontrados</p>
           <p>Orden editorial · Ago 2026</p>
         </header>
 
@@ -70,7 +88,7 @@
                 <p class="card-meta"><span>Aventura</span><span>6 h</span></p>
                 <h3 class="card-title">Nebula Drift</h3>
                 <p class="card-text">Una expedición íntima hacia el borde de una galaxia que está olvidando sus estrellas.</p>
-                <a class="card-action" href="detalle.html">Ver ficha <span aria-hidden="true">↗</span></a>
+                <button class="card-action game-detail-button" type="button" data-bs-toggle="modal" data-bs-target="#gameModal" data-game="nebula">Vista rápida <span aria-hidden="true">↗</span></button>
               </section>
             </section>
           </article>
@@ -85,7 +103,7 @@
                 <p class="card-meta"><span>Estrategia</span><span>12 h</span></p>
                 <h3 class="card-title">Afterlight Protocol</h3>
                 <p class="card-text">Administra siete minutos de energía al día y decide qué parte de la ciudad vuelve a vivir.</p>
-                <a class="card-action" href="detalle.html">Ver ficha <span aria-hidden="true">↗</span></a>
+                <button class="card-action game-detail-button" type="button" data-bs-toggle="modal" data-bs-target="#gameModal" data-game="afterlight">Vista rápida <span aria-hidden="true">↗</span></button>
               </section>
             </section>
           </article>
@@ -100,7 +118,7 @@
                 <p class="card-meta"><span>Aventura</span><span>8 h</span></p>
                 <h3 class="card-title">Mossbound</h3>
                 <p class="card-text">El bosque memoriza tus pasos y cambia los senderos cada vez que intentas volver.</p>
-                <a class="card-action" href="detalle.html">Ver ficha <span aria-hidden="true">↗</span></a>
+                <button class="card-action game-detail-button" type="button" data-bs-toggle="modal" data-bs-target="#gameModal" data-game="mossbound">Vista rápida <span aria-hidden="true">↗</span></button>
               </section>
             </section>
           </article>
@@ -115,7 +133,7 @@
                 <p class="card-meta"><span>Simulación</span><span>10 h</span></p>
                 <h3 class="card-title">Pixel Forge</h3>
                 <p class="card-text">Forja armas imposibles y conoce las historias de los héroes que vienen a buscarlas.</p>
-                <a class="card-action" href="detalle.html">Ver ficha <span aria-hidden="true">↗</span></a>
+                <button class="card-action game-detail-button" type="button" data-bs-toggle="modal" data-bs-target="#gameModal" data-game="forge">Vista rápida <span aria-hidden="true">↗</span></button>
               </section>
             </section>
           </article>
@@ -130,7 +148,7 @@
                 <p class="card-meta"><span>Puzle</span><span>4 h</span></p>
                 <h3 class="card-title">Echo Line</h3>
                 <p class="card-text">Resuelve espacios que solo existen mientras recuerdas el sonido que los creó.</p>
-                <a class="card-action" href="detalle.html">Ver ficha <span aria-hidden="true">↗</span></a>
+                <button class="card-action game-detail-button" type="button" data-bs-toggle="modal" data-bs-target="#gameModal" data-game="echo">Vista rápida <span aria-hidden="true">↗</span></button>
               </section>
             </section>
           </article>
@@ -145,7 +163,7 @@
                 <p class="card-meta"><span>Simulación</span><span>7 h</span></p>
                 <h3 class="card-title">Tidekeeper</h3>
                 <p class="card-text">Cuida el último faro y negocia con un océano que responde a tu estado de ánimo.</p>
-                <a class="card-action" href="detalle.html">Ver ficha <span aria-hidden="true">↗</span></a>
+                <button class="card-action game-detail-button" type="button" data-bs-toggle="modal" data-bs-target="#gameModal" data-game="tide">Vista rápida <span aria-hidden="true">↗</span></button>
               </section>
             </section>
           </article>
@@ -160,7 +178,7 @@
                 <p class="card-meta"><span>Estrategia</span><span>9 h</span></p>
                 <h3 class="card-title">Paper Crown</h3>
                 <p class="card-text">Gobierna un reino dibujado a mano donde cada decreto cambia también el mapa.</p>
-                <a class="card-action" href="detalle.html">Ver ficha <span aria-hidden="true">↗</span></a>
+                <button class="card-action game-detail-button" type="button" data-bs-toggle="modal" data-bs-target="#gameModal" data-game="crown">Vista rápida <span aria-hidden="true">↗</span></button>
               </section>
             </section>
           </article>
@@ -175,11 +193,13 @@
                 <p class="card-meta"><span>Puzle</span><span>5 h</span></p>
                 <h3 class="card-title">Loop Garden</h3>
                 <p class="card-text">Cultiva plantas que doblan el tiempo y abre caminos usando sus ciclos de crecimiento.</p>
-                <a class="card-action" href="detalle.html">Ver ficha <span aria-hidden="true">↗</span></a>
+                <button class="card-action game-detail-button" type="button" data-bs-toggle="modal" data-bs-target="#gameModal" data-game="garden">Vista rápida <span aria-hidden="true">↗</span></button>
               </section>
             </section>
           </article>
         </section>
+
+        <p class="empty-state d-none" id="emptyState">No encontramos coincidencias. Prueba con otro nombre o género.</p>
 
         <nav class="catalog-pagination" aria-label="Paginación del catálogo">
           <ul class="pagination justify-content-center">
@@ -191,6 +211,33 @@
       </section>
     </section>
 
+    <section class="modal fade" id="gameModal" tabindex="-1" aria-labelledby="modalGameTitle">
+      <section class="modal-dialog modal-dialog-centered modal-lg">
+        <article class="modal-content game-modal">
+          <header class="modal-header">
+            <p class="eyebrow mb-0">Vista rápida</p>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </header>
+          <section class="modal-body">
+            <section class="row g-4 align-items-center">
+              <section class="col-md-5">
+                <img id="modalGameImage" src="img/nebula-drift.webp" alt="Portada del juego seleccionado" width="720" height="900">
+              </section>
+              <section class="col-md-7">
+                <span class="genre-tag" id="modalGameGenre">Aventura</span>
+                <h2 id="modalGameTitle">Nebula Drift</h2>
+                <p id="modalGameDescription">Una expedición íntima hacia el borde de una galaxia que está olvidando sus estrellas.</p>
+                <dl class="quick-facts">
+                  <div><dt>Duración</dt><dd id="modalGameDuration">6 horas</dd></div>
+                  <div><dt>Modo</dt><dd>Un jugador</dd></div>
+                </dl>
+                <a class="btn btn-accent" id="modalGameLink" href="detalle.html">Ver ficha completa</a>
+              </section>
+            </section>
+          </section>
+        </article>
+      </section>
+    </section>
   </main>
 
   <footer class="site-footer">
