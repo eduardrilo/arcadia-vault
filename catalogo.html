@@ -1,28 +1,212 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Catálogo de Arcadia Vault.">
+  <meta name="description" content="Explora el catálogo curado de videojuegos independientes de Arcadia Vault.">
   <title>Arcadia Vault | Catálogo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="css/custom.css">
 </head>
-<body>
-  <header class="site-header">
+<body data-page="catalogo">
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <header class="site-header sticky-top">
     <nav class="navbar navbar-expand-lg" aria-label="Navegación principal">
       <section class="container-xl">
-        <a class="navbar-brand" href="index.html"><span class="brand-mark" aria-hidden="true">A</span> ARCADIA <strong>VAULT</strong></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú"><span class="navbar-toggler-icon"></span></button>
-        <section class="collapse navbar-collapse" id="menuPrincipal"><ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li><li class="nav-item"><a class="nav-link active" aria-current="page" href="catalogo.html">Catálogo</a></li><li class="nav-item"><a class="nav-link" href="detalle.html">Juego destacado</a></li><li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li></ul></section>
+        <a class="navbar-brand" href="index.html" aria-label="Arcadia Vault, ir al inicio">
+          <span class="brand-mark" aria-hidden="true">A</span>
+          <span>ARCADIA <strong>VAULT</strong></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <section class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="catalogo.html">Catálogo</a></li>
+            <li class="nav-item"><a class="nav-link" href="detalle.html">Juego destacado</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+            <li class="nav-item ms-lg-2">
+              <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar a modo oscuro" aria-pressed="false"><span aria-hidden="true">◐</span></button>
+            </li>
+          </ul>
+        </section>
       </section>
     </nav>
   </header>
-  <main><section class="placeholder-section container-xl" aria-labelledby="pageTitle"><p class="eyebrow">Próxima sección</p><h1 id="pageTitle">Catálogo</h1><p>El listado de juegos se incorporará en una rama de feature.</p></section></main>
-  <footer class="site-footer"><section class="container-xl"><p>Arcadia Vault · Proyecto académico 2026</p></section></footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <main id="contenido">
+    <header class="page-header">
+      <section class="container-xl">
+        <p class="eyebrow">Archivo / Volumen 01</p>
+        <section class="page-title-row">
+          <h1>Ocho juegos.<br>Ocho obsesiones.</h1>
+          <p>Filtra la colección o busca por nombre. Cada ficha fue seleccionada por su mundo, no por su presupuesto.</p>
+        </section>
+      </section>
+    </header>
+
+    <section class="catalog-section section-space" aria-labelledby="catalogTitle">
+      <section class="container-xl">
+        <h2 class="visually-hidden" id="catalogTitle">Listado de videojuegos</h2>
+
+        <header class="results-header">
+          <p><strong>8</strong> juegos en la colección</p>
+          <p>Orden editorial · Ago 2026</p>
+        </header>
+
+        <section class="row g-4" id="gameGrid">
+          <article class="col-sm-6 col-lg-3 game-item" id="nebula-drift" data-name="nebula drift" data-category="aventura">
+            <section class="card game-card h-100">
+              <section class="cover-wrap">
+                <img src="img/nebula-drift.webp" class="card-img-top" alt="Nave solitaria avanzando entre nebulosas violetas" width="720" height="900">
+                <span class="card-index">01</span>
+              </section>
+              <section class="card-body">
+                <p class="card-meta"><span>Aventura</span><span>6 h</span></p>
+                <h3 class="card-title">Nebula Drift</h3>
+                <p class="card-text">Una expedición íntima hacia el borde de una galaxia que está olvidando sus estrellas.</p>
+                <a class="card-action" href="detalle.html">Ver ficha <span aria-hidden="true">↗</span></a>
+              </section>
+            </section>
+          </article>
+
+          <article class="col-sm-6 col-lg-3 game-item" id="afterlight" data-name="afterlight protocol" data-category="estrategia">
+            <section class="card game-card h-100">
+              <section class="cover-wrap">
+                <img src="img/afterlight.webp" class="card-img-top" alt="Ciudad futurista iluminada por un sol naranja" width="720" height="900">
+                <span class="card-index">02</span>
+              </section>
+              <section class="card-body">
+                <p class="card-meta"><span>Estrategia</span><span>12 h</span></p>
+                <h3 class="card-title">Afterlight Protocol</h3>
+                <p class="card-text">Administra siete minutos de energía al día y decide qué parte de la ciudad vuelve a vivir.</p>
+                <a class="card-action" href="detalle.html">Ver ficha <span aria-hidden="true">↗</span></a>
+              </section>
+            </section>
+          </article>
+
+          <article class="col-sm-6 col-lg-3 game-item" id="mossbound" data-name="mossbound" data-category="aventura">
+            <section class="card game-card h-100">
+              <section class="cover-wrap">
+                <img src="img/mossbound.webp" class="card-img-top" alt="Bosque verde cubriendo ruinas de una civilización antigua" width="720" height="900">
+                <span class="card-index">03</span>
+              </section>
+              <section class="card-body">
+                <p class="card-meta"><span>Aventura</span><span>8 h</span></p>
+                <h3 class="card-title">Mossbound</h3>
+                <p class="card-text">El bosque memoriza tus pasos y cambia los senderos cada vez que intentas volver.</p>
+                <a class="card-action" href="detalle.html">Ver ficha <span aria-hidden="true">↗</span></a>
+              </section>
+            </section>
+          </article>
+
+          <article class="col-sm-6 col-lg-3 game-item" id="pixel-forge" data-name="pixel forge" data-category="simulacion">
+            <section class="card game-card h-100">
+              <section class="cover-wrap">
+                <img src="img/pixel-forge.webp" class="card-img-top" alt="Forja fantástica con chispas rojas y metal brillante" width="720" height="900">
+                <span class="card-index">04</span>
+              </section>
+              <section class="card-body">
+                <p class="card-meta"><span>Simulación</span><span>10 h</span></p>
+                <h3 class="card-title">Pixel Forge</h3>
+                <p class="card-text">Forja armas imposibles y conoce las historias de los héroes que vienen a buscarlas.</p>
+                <a class="card-action" href="detalle.html">Ver ficha <span aria-hidden="true">↗</span></a>
+              </section>
+            </section>
+          </article>
+
+          <article class="col-sm-6 col-lg-3 game-item" id="echo-line" data-name="echo line" data-category="puzle">
+            <section class="card game-card h-100">
+              <section class="cover-wrap">
+                <img src="img/echo-line.webp" class="card-img-top" alt="Ondas de sonido azules cruzando un túnel oscuro" width="720" height="900">
+                <span class="card-index">05</span>
+              </section>
+              <section class="card-body">
+                <p class="card-meta"><span>Puzle</span><span>4 h</span></p>
+                <h3 class="card-title">Echo Line</h3>
+                <p class="card-text">Resuelve espacios que solo existen mientras recuerdas el sonido que los creó.</p>
+                <a class="card-action" href="detalle.html">Ver ficha <span aria-hidden="true">↗</span></a>
+              </section>
+            </section>
+          </article>
+
+          <article class="col-sm-6 col-lg-3 game-item" id="tidekeeper" data-name="tidekeeper" data-category="simulacion">
+            <section class="card game-card h-100">
+              <section class="cover-wrap">
+                <img src="img/tidekeeper.webp" class="card-img-top" alt="Faro blanco frente a un océano turquesa y una gran luna" width="720" height="900">
+                <span class="card-index">06</span>
+              </section>
+              <section class="card-body">
+                <p class="card-meta"><span>Simulación</span><span>7 h</span></p>
+                <h3 class="card-title">Tidekeeper</h3>
+                <p class="card-text">Cuida el último faro y negocia con un océano que responde a tu estado de ánimo.</p>
+                <a class="card-action" href="detalle.html">Ver ficha <span aria-hidden="true">↗</span></a>
+              </section>
+            </section>
+          </article>
+
+          <article class="col-sm-6 col-lg-3 game-item" id="paper-crown" data-name="paper crown" data-category="estrategia">
+            <section class="card game-card h-100">
+              <section class="cover-wrap">
+                <img src="img/paper-crown.webp" class="card-img-top" alt="Corona de papel sobre un mapa político color arena" width="720" height="900">
+                <span class="card-index">07</span>
+              </section>
+              <section class="card-body">
+                <p class="card-meta"><span>Estrategia</span><span>9 h</span></p>
+                <h3 class="card-title">Paper Crown</h3>
+                <p class="card-text">Gobierna un reino dibujado a mano donde cada decreto cambia también el mapa.</p>
+                <a class="card-action" href="detalle.html">Ver ficha <span aria-hidden="true">↗</span></a>
+              </section>
+            </section>
+          </article>
+
+          <article class="col-sm-6 col-lg-3 game-item" id="loop-garden" data-name="loop garden" data-category="puzle">
+            <section class="card game-card h-100">
+              <section class="cover-wrap">
+                <img src="img/loop-garden.webp" class="card-img-top" alt="Jardín geométrico rosado suspendido en el espacio" width="720" height="900">
+                <span class="card-index">08</span>
+              </section>
+              <section class="card-body">
+                <p class="card-meta"><span>Puzle</span><span>5 h</span></p>
+                <h3 class="card-title">Loop Garden</h3>
+                <p class="card-text">Cultiva plantas que doblan el tiempo y abre caminos usando sus ciclos de crecimiento.</p>
+                <a class="card-action" href="detalle.html">Ver ficha <span aria-hidden="true">↗</span></a>
+              </section>
+            </section>
+          </article>
+        </section>
+
+        <nav class="catalog-pagination" aria-label="Paginación del catálogo">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><span class="page-link" aria-hidden="true">←</span></li>
+            <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+            <li class="page-item disabled"><span class="page-link" aria-hidden="true">→</span></li>
+          </ul>
+        </nav>
+      </section>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <section class="container-xl footer-grid">
+      <section>
+        <a class="footer-brand" href="index.html">ARCADIA <strong>VAULT</strong></a>
+        <p>Pequeños juegos. Grandes mundos.</p>
+      </section>
+      <nav aria-label="Navegación del pie de página">
+        <a href="catalogo.html">Catálogo</a><a href="detalle.html">Destacado</a><a href="contacto.html">Contacto</a>
+      </nav>
+      <p class="footer-note">Proyecto académico · HTML + CSS + JS · 2026</p>
+    </section>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
