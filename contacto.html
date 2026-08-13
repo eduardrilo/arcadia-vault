@@ -1,22 +1,125 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Contacto de Arcadia Vault.">
+  <meta name="description" content="Contacta a Arcadia Vault o recomienda un videojuego independiente para el catálogo.">
   <title>Arcadia Vault | Contacto</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="css/custom.css">
 </head>
-<body>
-  <header class="site-header">
-    <nav class="navbar navbar-expand-lg" aria-label="Navegación principal"><section class="container-xl"><a class="navbar-brand" href="index.html"><span class="brand-mark" aria-hidden="true">A</span> ARCADIA <strong>VAULT</strong></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú"><span class="navbar-toggler-icon"></span></button><section class="collapse navbar-collapse" id="menuPrincipal"><ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li><li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li><li class="nav-item"><a class="nav-link" href="detalle.html">Juego destacado</a></li><li class="nav-item"><a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a></li></ul></section></section></nav>
+<body data-page="contacto">
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg" aria-label="Navegación principal">
+      <section class="container-xl">
+        <a class="navbar-brand" href="index.html" aria-label="Arcadia Vault, ir al inicio"><span class="brand-mark" aria-hidden="true">A</span><span>ARCADIA <strong>VAULT</strong></span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú"><span class="navbar-toggler-icon"></span></button>
+        <section class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+            <li class="nav-item"><a class="nav-link" href="detalle.html">Juego destacado</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a></li>
+            <li class="nav-item ms-lg-2"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar a modo oscuro" aria-pressed="false"><span aria-hidden="true">◐</span></button></li>
+          </ul>
+        </section>
+      </section>
+    </nav>
   </header>
-  <main><section class="placeholder-section container-xl" aria-labelledby="pageTitle"><p class="eyebrow">Próxima sección</p><h1 id="pageTitle">Contacto</h1><p>El formulario se incorporará en una rama de feature.</p></section></main>
-  <footer class="site-footer"><section class="container-xl"><p>Arcadia Vault · Proyecto académico 2026</p></section></footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <main id="contenido">
+    <section class="contact-hero" aria-labelledby="contactTitle">
+      <section class="container-xl contact-grid">
+        <header class="contact-intro">
+          <p class="eyebrow">Canal abierto</p>
+          <h1 id="contactTitle">¿Qué juego no deberíamos perdernos?</h1>
+          <p>Recomiéndanos una joya escondida, comparte una idea o simplemente cuéntanos qué estás jugando.</p>
+          <dl class="contact-details">
+            <div><dt>Respuesta estimada</dt><dd>48 horas</dd></div>
+            <div><dt>Frecuencia</dt><dd>Siempre encendida</dd></div>
+          </dl>
+        </header>
+
+        <section class="card contact-card" aria-label="Formulario de contacto">
+          <section class="card-body">
+            <form id="contactForm" novalidate>
+              <section class="mb-4">
+                <label class="form-label" for="contactName">Nombre</label>
+                <input class="form-control" id="contactName" name="nombre" type="text" autocomplete="name" required minlength="2" placeholder="Tu nombre">
+                <p class="invalid-feedback">Escribe un nombre de al menos 2 caracteres.</p>
+              </section>
+              <section class="mb-4">
+                <label class="form-label" for="contactEmail">Correo electrónico</label>
+                <input class="form-control" id="contactEmail" name="correo" type="email" autocomplete="email" required placeholder="tu@correo.cl" aria-describedby="emailHelp">
+                <p class="form-text" id="emailHelp">Nunca compartiremos tu correo.</p>
+                <p class="invalid-feedback">Ingresa un correo válido.</p>
+              </section>
+              <section class="mb-4">
+                <label class="form-label" for="contactTopic">Motivo</label>
+                <select class="form-select" id="contactTopic" name="motivo" required>
+                  <option value="">Selecciona una opción</option>
+                  <option value="recomendacion">Recomendar un juego</option>
+                  <option value="colaboracion">Proponer una colaboración</option>
+                  <option value="comentario">Enviar un comentario</option>
+                </select>
+                <p class="invalid-feedback">Selecciona un motivo.</p>
+              </section>
+              <section class="mb-4">
+                <label class="form-label" for="contactMessage">Mensaje</label>
+                <textarea class="form-control" id="contactMessage" name="mensaje" rows="5" maxlength="400" required minlength="20" placeholder="Cuéntanos por qué deberíamos jugarlo..." aria-describedby="messageCounter"></textarea>
+                <p class="character-counter" id="messageCounter"><span id="messageCount">0</span>/400 caracteres</p>
+                <p class="invalid-feedback">El mensaje debe tener al menos 20 caracteres.</p>
+              </section>
+              <section class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" id="contactConsent" required>
+                <label class="form-check-label" for="contactConsent">Acepto que me contacten para responder este mensaje.</label>
+                <p class="invalid-feedback">Necesitamos tu autorización para responder.</p>
+              </section>
+              <button class="btn btn-accent btn-lg w-100" type="submit">Enviar transmisión <span aria-hidden="true">→</span></button>
+              <section class="alert alert-success mt-4 d-none" id="formSuccess" role="status" aria-live="polite">
+                <strong>Transmisión recibida.</strong> Gracias por ampliar nuestro radar.
+              </section>
+            </form>
+          </section>
+        </section>
+      </section>
+    </section>
+
+    <section class="faq-section section-space" aria-labelledby="faqTitle">
+      <section class="container-xl faq-grid">
+        <header><p class="eyebrow">Antes de transmitir</p><h2 id="faqTitle">Preguntas frecuentes</h2></header>
+        <section class="accordion custom-accordion" id="contactFaq">
+          <article class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">¿Los juegos del catálogo existen?</button></h3>
+            <section id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#contactFaq"><section class="accordion-body">No. Son títulos ficticios creados para este proyecto académico y permiten practicar una interfaz de catálogo sin depender todavía de una API.</section></section>
+          </article>
+          <article class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">¿Qué pasará en la Evaluación 2?</button></h3>
+            <section id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#contactFaq"><section class="accordion-body">Los datos estáticos pueden reemplazarse por una API pública y los filtros actuales pueden reutilizarse para trabajar con los resultados obtenidos mediante fetch.</section></section>
+          </article>
+          <article class="accordion-item">
+            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">¿El formulario envía datos reales?</button></h3>
+            <section id="faqThree" class="accordion-collapse collapse" data-bs-parent="#contactFaq"><section class="accordion-body">En esta versión solo valida los campos y muestra una confirmación en pantalla. No almacena ni transmite información.</section></section>
+          </article>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <section class="container-xl footer-grid">
+      <section><a class="footer-brand" href="index.html">ARCADIA <strong>VAULT</strong></a><p>Pequeños juegos. Grandes mundos.</p></section>
+      <nav aria-label="Navegación del pie de página"><a href="catalogo.html">Catálogo</a><a href="detalle.html">Destacado</a><a href="contacto.html">Contacto</a></nav>
+      <p class="footer-note">Proyecto académico · HTML + CSS + JS · 2026</p>
+    </section>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
